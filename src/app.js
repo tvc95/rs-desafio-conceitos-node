@@ -30,7 +30,7 @@ app.put("/repositories/:id", (request, response) => {
 
   //Caso o repositório não exista
   if (repoIndex < 0) {
-    return res.status(400).json({ error: 'Repository not found' });
+    return response.status(400).json({ error: 'Repository not found' });
   }
 
   //Caso contrário, atualize os valores do repositório encontrado
@@ -47,7 +47,7 @@ app.delete("/repositories/:id", (request, response) => {
 
   //Caso o repositório não exista
   if (repoIndex < 0) {
-    return res.status(400).json({ error: 'Repository not found' });
+    return response.status(400).json({ error: 'Repository not found' });
   }
 
   repositories.splice(repoIndex, 1);
@@ -63,7 +63,7 @@ app.post("/repositories/:id/like", (request, response) => {
 
   //Caso o repositório não exista
   if (repoIndex < 0) {
-    return res.status(400).json({ error: 'Repository not found' });
+    return response.status(400).json({ error: 'Repository not found' });
   }
 
   //Caso contrário, atualize os valores do repositório encontrado
